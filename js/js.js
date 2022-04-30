@@ -31,7 +31,9 @@ class Jogo {
 
     this.game.timer = setInterval(()=>{
         this.moveJogador();
+        this.moveAmigo();
         this.moveInimigo1();
+        this.moveInimigo2();
         this.moveFundo();
     }, 30);
   }
@@ -78,12 +80,30 @@ class Jogo {
     $("#inimigo1").css("left", posicaoX-this.valocidadeDoInimigo);
     $("#inimigo1").css("top", this.posicaoY);
 
-    console.log(posicaoX);
-
     if (posicaoX <= 50) {
         this.posicaoY = parseInt(Math.random() * 334);
         $("#inimigo1").css("left", 694);
         $("#inimigo1").css("top", this.posicaoY);
+    }
+  }
+
+  moveInimigo2() {
+    
+    let posicaoX = parseInt($("#inimigo2").css("left"));
+    $("#inimigo2").css("left", posicaoX-3);
+
+    if (posicaoX <= 0) {
+        $("#inimigo2").css("left", 775);
+    }
+  }
+
+  moveAmigo() {
+    let posicaoX = parseInt($("#amigo").css("left"));
+    $("#amigo").css("left", posicaoX+1);
+
+    if (posicaoX > 906) {
+      $("#amigo").css("left", 0);
+      
     }
   }
 }

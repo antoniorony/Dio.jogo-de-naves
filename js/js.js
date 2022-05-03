@@ -157,27 +157,28 @@ class Jogo {
     }
 
     if (colisao2[0] !== undefined) {
+      console.log('colidiu');
 	
-      inimigo2X = parseInt($("#inimigo2").css("left"));
-      inimigo2Y = parseInt($("#inimigo2").css("top"));
+      let inimigo2X = parseInt($("#inimigo2").css("left"));
+      let inimigo2Y = parseInt($("#inimigo2").css("top"));
       this.explosao2(inimigo2X,inimigo2Y);
           
       $("#inimigo2").remove();
         
-      reposicionaInimigo2();
+      this.reposicionaInimigo2();
         
       }	
 
     if (colisao3[0] !== undefined) {
   
   
-      inimigo1X = parseInt($("#inimigo1").css("left"));
-      inimigo1Y = parseInt($("#inimigo1").css("top"));
+      let inimigo1X = parseInt($("#inimigo1").css("left"));
+      let inimigo1Y = parseInt($("#inimigo1").css("top"));
         
       this.explosao1(inimigo1X,inimigo1Y);
       $("#disparo").css("left",950);
         
-      posicaoY = parseInt(Math.random() * 334);
+      let posicaoY = parseInt(Math.random() * 334);
       $("#inimigo1").css("left",694);
       $("#inimigo1").css("top",posicaoY);
         
@@ -185,20 +186,20 @@ class Jogo {
 
     if (colisao4[0] !== undefined) {
 
-      inimigo2X = parseInt($("#inimigo2").css("left"));
-      inimigo2Y = parseInt($("#inimigo2").css("top"));
+      let inimigo2X = parseInt($("#inimigo2").css("left"));
+      let inimigo2Y = parseInt($("#inimigo2").css("top"));
       $("#inimigo2").remove();
     
       this.explosao2(inimigo2X,inimigo2Y);
       $("#disparo").css("left",950);
       
-      reposicionaInimigo2();
+      this.reposicionaInimigo2();
         
       }
 
     if (colisao5[0] !== undefined) {
 
-      reposicionaAmigo();
+      this.reposicionaAmigo();
       $("#amigo").remove();
     }
   }
